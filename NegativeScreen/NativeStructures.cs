@@ -1,20 +1,20 @@
-// Copyright 2011-2017 Melvyn Laïly
-// https://zerowidthjoiner.net
+﻿//Copyright 2011-2012 Melvyn Laily
+//http://arcanesanctum.net
 
-// This file is part of NegativeScreen.
+//This file is part of NegativeScreen.
 
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
+//This program is free software: you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
+//This program is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
 
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//You should have received a copy of the GNU General Public License
+//along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Runtime.InteropServices;
@@ -22,7 +22,7 @@ using System.ComponentModel;
 
 namespace NegativeScreen
 {
-	// based on http://delphi32.blogspot.com/2010/09/windows-magnification-api-net.html
+	//based on http://delphi32.blogspot.com/2010/09/windows-magnification-api-net.html
 
 	/// <summary>
 	/// Magnifier Window Styles
@@ -32,15 +32,6 @@ namespace NegativeScreen
 		MS_SHOWMAGNIFIEDCURSOR = 0x0001,
 		MS_CLIPAROUNDCURSOR = 0x0002,
 		MS_INVERTCOLORS = 0x0004
-	}
-
-	internal enum MagnifierFilterMode : uint
-	{
-		MW_FILTERMODE_EXCLUDE = 0,
-		/// <summary>
-		/// Note: This value is not supported on Windows 7 or Windows 8.
-		/// </summary>
-		MW_FILTERMODE_INCLUDE = 1,
 	}
 
 	/// <summary>
@@ -251,15 +242,21 @@ namespace NegativeScreen
 			return (r.left == left && r.right == right && r.top == top && r.bottom == bottom);
 		}
 
-		// Attempting a minor degree of "hash-ness" here
 		public override int GetHashCode()
-			=> ((left ^ top) ^ right) ^ bottom;
+		{
+			// Attempting a minor degree of "hash-ness" here
+			return ((left ^ top) ^ right) ^ bottom;
+		}
 
 		public static bool operator ==(RECT a, RECT b)
-			=> (a.left == b.left && a.right == b.right && a.top == b.top && a.bottom == b.bottom);
+		{
+			return (a.left == b.left && a.right == b.right && a.top == b.top && a.bottom == b.bottom);
+		}
 
 		public static bool operator !=(RECT a, RECT b)
-			=> !(a == b);
+		{
+			return !(a == b);
+		}
 
 	}
 
@@ -267,7 +264,7 @@ namespace NegativeScreen
 	/// <summary>
 	/// Specifies the style of the window being created
 	/// </summary>
-	[Flags]
+	[FlagsAttribute]
 	[Description("Specifies the style of the window being created")]
 	internal enum WindowStyles : int
 	{
@@ -412,7 +409,7 @@ namespace NegativeScreen
 		WS_CHILDWINDOW = (WindowStyles.WS_CHILD)
 	}
 
-	[Flags]
+	[FlagsAttribute]
 	internal enum SetWindowPosFlags : int
 	{
 		SWP_NOSIZE = 1,
@@ -431,7 +428,7 @@ namespace NegativeScreen
 	/// <summary>
 	/// Specifies the extended style of the window
 	/// </summary>
-	[Flags]
+	[FlagsAttribute]
 	[Description("Specifies the extended style of the window")]
 	internal enum ExtendedWindowStyles : int
 	{
@@ -574,7 +571,7 @@ namespace NegativeScreen
 	/// <summary>
 	/// Layered window flags
 	/// </summary>
-	[Flags]
+	[FlagsAttribute]
 	[Description("Layered window flags")]
 	internal enum LayeredWindowAttributeFlags : int
 	{
@@ -588,7 +585,7 @@ namespace NegativeScreen
 		LWA_ALPHA = 0x00000002
 	}
 
-	[Flags]
+	[FlagsAttribute]
 	internal enum LayeredWindowUpdateFlags : int
 	{
 		ULW_COLORKEY = 0x00000001,

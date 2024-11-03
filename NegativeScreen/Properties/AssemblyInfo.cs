@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -6,18 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NegativeScreen")]
-[assembly: AssemblyDescription(
-@"The original purpose of NegativeScreen was to simply invert your screen's colors.
-This can be useful, for example when using a computer in a dark room and the screen is dazzling you.
-
-The name stuck, but you can now use NegativeScreen to apply any color effect that can be modeled as a color transformation matrix.
-
-Home page and documentation: https://zerowidthjoiner.net/negativescreen
-Source code (GPL): https://github.com/mlaily/NegativeScreen/
-")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("ArcaneSanctum.Net")]
 [assembly: AssemblyProduct("NegativeScreen")]
-[assembly: AssemblyCopyright("Copyright © Melvyn Laïly 2011-2018")]
+[assembly: AssemblyCopyright("Copyright © Melvyn Laily 2011-2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -39,4 +32,4 @@ Source code (GPL): https://github.com/mlaily/NegativeScreen/
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.6.*")]
+[assembly: AssemblyVersion("1.11.*")]
